@@ -1,0 +1,100 @@
+/* 基础菜单样式 */
+.m-menu {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+  
+  /* 菜单项通用样式 */
+  .m-menu-item {
+    position: relative;
+    padding: 12px 20px;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* 悬停效果 */
+  .m-menu-item:hover {
+    background-color: #e6e6e6;
+  }
+  
+  /* 激活状态 */
+  .m-menu-item.is-active {
+    background-color: #e0e0e0;
+    color: #409EFF;
+    border-left: 3px solid #409EFF;
+  }
+  
+  /* 子菜单样式 */
+  .m-submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* 子菜单项缩进 */
+  .m-submenu .m-menu-item {
+    padding-left: 40px;
+  }
+  
+  /* 菜单图标样式 */
+  .m-menu-item .icon {
+    margin-right: 8px;
+    width: 18px;
+    text-align: center;
+  }
+  
+  /* 箭头图标 */
+  .m-menu-item .arrow {
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .m-menu-item .arrow.down {
+    transform: rotate(0deg);
+  }
+  
+  .m-menu-item .arrow.right {
+    transform: rotate(-90deg);
+  }
+  
+  /* 分隔线 */
+  .m-menu-divider {
+    height: 1px;
+    margin: 10px 0;
+    background-color: #ddd;
+  }
+  
+  /* 垂直菜单模式 */
+  .m-menu--vertical {
+    border-right: 1px solid #e6e6e6;
+  }
+  
+  /* 水平菜单模式 */
+  .m-menu--horizontal {
+    display: flex;
+    border-bottom: 2px solid #e6e6e6;
+  }
+  
+  .m-menu--horizontal .m-menu-item {
+    border-bottom: 2px solid transparent;
+  }
+  
+  .m-menu--horizontal .m-menu-item.is-active {
+    border-left: none;
+    border-bottom-color: #409EFF;
+  }
+  
+  /* 禁用状态 */
+  .m-menu-item.is-disabled {
+    color: #bbb;
+    cursor: not-allowed;
+    background-color: transparent;
+  }

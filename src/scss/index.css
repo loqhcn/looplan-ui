@@ -1,0 +1,357 @@
+@charset "UTF-8";
+body {
+  font-size: 16px;
+  color: var(--text-a);
+  background-color: var(--ui-BG-1) !important;
+  font-family: Arial, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: "iconfont";
+  /* Project id 4614064 */
+  src: url("//at.alicdn.com/t/c/font_4614064_ku1l7d80as.woff2?t=1721506145638") format("woff2"), url("//at.alicdn.com/t/c/font_4614064_ku1l7d80as.woff?t=1721506145638") format("woff"), url("//at.alicdn.com/t/c/font_4614064_ku1l7d80as.ttf?t=1721506145638") format("truetype");
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex.column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.basis-xs {
+  flex-basis: 20% !important;
+}
+.basis-sm {
+  flex-basis: 40% !important;
+}
+.basis-df {
+  flex-basis: 50% !important;
+}
+.basis-lg {
+  flex-basis: 60% !important;
+}
+.basis-xl {
+  flex-basis: 80% !important;
+}
+
+.align-start {
+  align-items: flex-start !important;
+}
+.align-end {
+  align-items: flex-end !important;
+}
+.align-center {
+  align-items: center !important;
+}
+.align-stretch {
+  align-items: stretch !important;
+}
+.align-baseline {
+  align-items: baseline !important;
+}
+
+.self-start {
+  align-self: flex-start !important;
+}
+.self-end {
+  align-self: flex-end !important;
+}
+.self-center {
+  align-self: center !important;
+}
+.self-stretch {
+  align-self: stretch !important;
+}
+.self-baseline {
+  align-self: baseline !important;
+}
+
+.justify-start {
+  justify-content: flex-start !important;
+}
+.justify-end {
+  justify-content: flex-end !important;
+}
+.justify-center {
+  justify-content: center !important;
+}
+.justify-between {
+  justify-content: space-between !important;
+}
+.justify-around {
+  justify-content: space-around !important;
+}
+
+.m-panel {
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+}
+.m-panel + .m-panel {
+  margin-top: 10px;
+}
+.m-panel .title {
+  font-size: 32px;
+}
+
+.m-layout {
+  padding: 10px;
+}
+
+.m-cell {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.m-cell + .m-cell {
+  border-top: 1px solid #f4f4f4;
+  margin-top: 5px;
+}
+.m-cell .label {
+  min-width: fit-content;
+}
+.m-cell .label::after {
+  content: ":";
+}
+.m-cell .value {
+  padding-left: 10px;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+.list.list-x {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.m-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  padding: 0 0 10rpx 0;
+}
+
+.color-yellow {
+  color: #ffc300;
+}
+
+.color-orange {
+  color: #ff6000;
+}
+
+.color-red {
+  color: #ff3000;
+}
+
+.color-pink {
+  color: #e03997;
+}
+
+.color-mauve {
+  color: #b745cb;
+}
+
+.color-purple {
+  color: #652abf;
+}
+
+.color-violet {
+  color: #652abf;
+}
+
+.color-blue {
+  color: #0081ff;
+}
+
+.color-cyan {
+  color: #37c0fe;
+}
+
+.color-green {
+  color: #2aae67;
+}
+
+.color-olive {
+  color: #8dc63f;
+}
+
+.color-grey {
+  color: #8799a3;
+}
+
+.color-brown {
+  color: #a5673f;
+}
+
+.color-black {
+  color: #484848;
+}
+
+.color-golden {
+  color: #e9b461;
+}
+
+.color-primary {
+  color: #1989fa;
+}
+
+.color-success {
+  color: #07c160;
+}
+
+.color-info {
+  color: #1989fa;
+}
+
+.color-warning {
+  color: #ff976a;
+}
+
+.color-danger {
+  color: #ee0a24;
+}
+
+.filter-box {
+  color: red;
+  display: flex;
+}
+
+.btn-xxx {
+  color: red;
+}
+
+.btn {
+  /* #ifndef APP-NVUE */
+  display: flex;
+  /* #endif */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 100%;
+  height: 40px;
+  font-size: 12px;
+  border-radius: 20px;
+}
+.btn:active {
+  opacity: 0.8;
+}
+
+.btn.btn-primary {
+  background-color: #1989fa;
+  color: white;
+}
+
+.btn.btn-success {
+  background-color: #07c160;
+  color: white;
+}
+
+.btn.btn-danger {
+  background-color: #ee0a24;
+  color: white;
+}
+
+.btn.btn-warning {
+  background-color: #ff976a;
+  color: white;
+}
+
+.btn.btn-hover {
+  transform: translate(1px, 1px);
+  background: none;
+}
+
+.btn::after {
+  border: none;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  height: 40px;
+  border-radius: 20px;
+  padding-left: 20px;
+}
+
+.mt {
+  margin-top: 20px;
+}
+
+.mb {
+  margin-bottom: 20px;
+}
+
+.ml {
+  margin-left: 20px;
+}
+
+.mr {
+  margin-right: 20px;
+}
+
+page {
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  width: 100%;
+  word-break: break-all;
+  white-space: normal;
+  background-color: #f6f6f6;
+  color: #333333;
+}
+
+.size-small {
+  font-size: 28px;
+}
+.size-small.btn {
+  padding: 10px;
+  height: 50px;
+  width: unset;
+}
+
+.m-empty {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  color: gray;
+}
+
+.m-img {
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=index.css.map */

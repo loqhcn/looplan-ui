@@ -1,0 +1,83 @@
+@use './../../var.scss' as *;
+@use "sass:math";
+@use "sass:map";
+@use "sass:color";
+
+.m-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $padding-xs $padding-sm;
+    font-size: map.get($fontsize, "df") * 1px;
+    border-width: $border-width;
+    border-style: solid;
+    border-radius: $radius-sm;
+    box-sizing: border-box;
+    white-space: nowrap;
+    
+    // 默认样式
+    background-color: $gray-f;
+    border-color: $gray-d;
+    color: $dark-6;
+
+    // 类型样式
+    @each $type, $color in $colors_scene {
+        &.type-#{$type} {
+            color: $white;
+            background-color: $color;
+            border-color: $color;
+
+            // 朴素样式
+            &.plain {
+                color: $color;
+                background-color: color.mix($white, $color, 90%);
+                border-color: color.mix($white, $color, 60%);
+            }
+        }
+    }
+
+    // 尺寸
+    &.size-large {
+        padding: $padding-xs $padding;
+        font-size: map.get($fontsize, "lg") * 1px;
+    }
+
+    &.size-small {
+        padding: 0 $padding-xs;
+        font-size: map.get($fontsize, "sm") * 1px;
+    }
+
+    // 圆形
+    &.round {
+        border-radius: $round-pill;
+    }
+
+    // 可关闭
+    .close-btn {
+        margin-left: $padding-xs;
+        font-size: map.get($fontsize, "sm") * 1px;
+        color: currentColor;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    // 禁用状态
+    &.disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    // 点击效果
+    &:not(.disabled) {
+        cursor: pointer;
+        transition: $transition-base;
+        
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+}
+

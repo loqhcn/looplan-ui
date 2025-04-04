@@ -1,0 +1,88 @@
+@use './../../var.scss' as *;
+
+// 默认大小
+$btn-height : 32px;
+
+// TODO 按钮
+.btn {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    padding: 8px 15px;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+
+    height: $btn-height;
+    line-height: $btn-height;
+    font-size: 12px;
+    border-radius: 4px;
+    border: none;
+
+    &+.btn {
+        margin-left: 12px;
+    }
+
+    &:active {
+        opacity: 0.8;
+    }
+
+    &:hover {
+        background-color: var(--m-color-primary-lignt-10);
+    }
+
+    &.link {
+        background-color: unset;
+    }
+
+    // 圆角
+    &.round {
+        border-radius: 16px;
+    }
+
+    // 圆圈
+    &.circle {
+        border-radius: 50%;
+        width: 32px;
+    }
+}
+
+// TODO 场景样式
+@each $name, $color in $colors_scene {
+    .btn.btn-#{$name} {
+        background-color: var(--m-color-#{$name});
+        color: white;
+
+        // 朴素的
+        &.plain{
+            border: 1px solid #{$color};
+            background-color: unset;
+            color: #{$color};
+        }
+
+        // 链接
+        &.link {
+            background-color: unset;
+            color: #{$color};
+        }
+    }
+}
+
+.btn-border {}
+
+
+
+.btn::after {
+    border: none;
+}
+
+// .btn.btn-info {
+//     background-color: var(--m-color-info);
+//     color: white;
+// }

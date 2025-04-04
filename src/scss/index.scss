@@ -1,0 +1,61 @@
+@use './var.scss' as *;
+@use 'reset';
+@use 'mixins';
+@use 'icon';
+@use './module/layout.scss';
+@use './module/font.scss';
+@use './module/dialog.scss';
+@use './root.scss';
+@use './module/components.scss';
+@use './module/dev.scss';
+@use './module/page.scss';
+@use './module/data.scss';
+@use './module/table.scss';
+@use './module/common.scss';
+
+
+
+// TODO 颜色
+@each $name, $color in $colors {
+    .color-#{$name} {
+        color: $color;
+    }
+}
+
+.filter-box {
+    color: red;
+    display: flex;
+}
+
+
+// 大小控制
+.size-small {
+    font-size: 28px;
+
+    &.btn {
+        padding: 10px;
+        height: 50px;
+
+        width: unset;
+        // border-radius: 6px;
+    }
+}
+
+
+.m-empty {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: gray;
+}
+
+.m-img {
+    width: 100%;
+    height: 100%;
+}
+
+.tip{
+    display: flex;
+    padding: 2px;
+    color: gray;
+}

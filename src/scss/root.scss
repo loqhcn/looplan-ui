@@ -1,0 +1,16 @@
+@use './var.scss' as *;
+
+// TODO root变量
+:root {
+
+    // TODO 颜色
+    @each $name, $color in $colors_scene {
+        --m-color-#{$name}: #{$color};
+    }
+
+    // 表格配置
+    --m-table-text-color:#606266;
+    --m-table-border-color:#ebeef5;
+    --m-table-column-color:#ffffff;
+
+}

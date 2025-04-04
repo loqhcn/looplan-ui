@@ -1,0 +1,71 @@
+.m-table {
+    display: table;
+    color: var(--m-table-text-color);
+    font-size: 14px;
+    width: 100%;
+
+    // table {
+    //     width: 100%;
+    //     // border-collapse: collapse;
+    // }
+    // table, th, td {
+    //     border: 1px solid black;
+    // }
+    // th, td {
+    //     padding: 8px;
+    //     text-align: left;
+    // }
+
+    .item{
+        display: table-row;
+        .column{
+            border-bottom: 1px solid var(--m-table-border-color);
+            display: table-cell;
+            padding: 12px;
+        }
+    }
+    
+
+    .m-table-head {
+
+
+
+        .item {
+           
+            font-weight: 500;
+            color: #909399;
+            background-color: var(--m-table-column-color);
+            font-weight: 600;
+
+            .column {
+                text-align: left;
+            }
+        }
+    }
+
+    .m-table-body {
+        .item {
+          
+        
+            transition: background-color 0.3s;
+            background-color: var(--m-table-column-color);
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background-color: #f5f7fa;
+            }
+
+            .column {
+                text-align: left;
+            }
+        }
+    }
+
+    // TODO 带边框表格
+    &.border{
+        
+    }
+}

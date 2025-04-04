@@ -1,0 +1,306 @@
+@use "./../var.scss" as *;
+
+
+// TODO flex 布局
+
+.flex {
+	display: flex;
+
+	&.column {
+		flex-direction: column;
+	}
+
+	&-row {
+		flex-direction: row;
+	}
+
+	// 换行
+	&.wrap {
+		flex-wrap: wrap;
+	}
+
+	&.wrap-reverse {
+		flex-wrap: wrap-reverse;
+	}
+
+	&.nowrap {
+		flex-wrap: nowrap;
+	}
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-end {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.basis {
+	@each $class, $value in (xs: 20%, sm: 40%, df: 50%, lg: 60%, xl: 80%) {
+		&-#{$class} {
+			flex-basis: $value !important;
+		}
+	}
+}
+
+.align {
+
+	@each $class,
+	$value in (start: flex-start, end: flex-end, center: center, stretch: stretch, baseline: baseline) {
+		&-#{$class} {
+			align-items: $value !important;
+		}
+	}
+}
+
+.self {
+
+	@each $class,
+	$value in (start: flex-start, end: flex-end, center: center, stretch: stretch, baseline: baseline) {
+		&-#{$class} {
+			align-self: $value !important;
+		}
+	}
+}
+
+.justify {
+
+	@each $class,
+	$value in (start: flex-start,
+		end: flex-end,
+		center: center,
+		between: space-between,
+		around: space-around) {
+		&-#{$class} {
+			justify-content: $value !important;
+		}
+	}
+}
+
+// TODO m-panel 面板
+.m-panel {
+	padding: $padding;
+	background-color: #ffffff;
+	border: 1px solid #e0e0e0;
+	border-radius: $radius-sm;
+	box-shadow: 5px 2px 9px 1px rgba(221, 221, 221, 0.7);
+	transition: all 0.3s ease;
+
+	&:hover {
+		box-shadow: 5px 2px 9px 1px rgba(221, 221, 221, 0.7) // transform: translateY(-2px);
+	}
+
+	&+.m-panel {
+		margin-top: 20px;
+	}
+
+	>.title {
+		font-size: 16px;
+		font-weight: 600;
+		color: #4e4e4e;
+		padding-bottom: $padding;
+		border-bottom: 1px solid #eeeeee;
+		margin-bottom: 5px;
+	}
+
+	>.body {
+		padding: $padding 0;
+		color: #666666;
+	}
+}
+
+
+
+// TODO m-layout 布局容器
+.m-layout {
+	// overflow: auto;
+
+	&.full {
+		height: 100%;
+		width: 100%;
+	}
+
+	&.full-view {
+		height: 100vh;
+		width: 100vw;
+	}
+
+	// TODO -- 布局辅助器
+
+	// TODO -- -- flex下自动撑满当前轴剩余空间
+	.m-layout-auto {
+		flex: 1;
+		flex-basis: 0%;
+		//自适应宽度时,需要有overflow保证子容器的overflow能生效
+		overflow: auto;
+	}
+}
+
+// TODO -- y-full y轴撑满
+.y-full {
+	height: 100%;
+}
+
+// TODO -- x-full x轴撑满
+.x-full {
+	width: 100%;
+}
+
+
+// TODO m-layout-relative 相对定位
+.m-layout-relative {
+	position: relative;
+}
+
+// TODO m-layout-absolute 绝对
+.m-layout-absolute {
+	position: absolute;
+
+	&.center-x {
+		left: 50%;
+		transform: translate(-50%);
+	}
+
+	&.center {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&.full {
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+
+	&.right {
+		right: 0;
+	}
+
+	&.center-y {
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+
+	&.bottom {
+		bottom: 0;
+
+		&.x-full {
+			left: 0;
+			width: 100%;
+		}
+	}
+}
+
+// TODO m-layout-fixed 固定位置定位
+.m-layout-fixed {
+	position: fixed;
+	z-index: 1000;
+
+	&.lefttop {
+		left: 0;
+		top: 0;
+	}
+
+	&.righttop {
+		right: 0;
+		top: 0;
+	}
+}
+
+// TODO m-cell 输入框栏目
+.m-cell {
+	padding: 10px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&+.m-cell {
+		border-top: 1px solid #f4f4f4;
+		margin-top: 5px;
+	}
+
+	.label {
+		min-width: fit-content;
+		padding: 0 $padding-sm;
+		color: gray;
+	}
+
+	.value {
+		padding-left: 10px;
+		width: 100%;
+	}
+}
+
+// TODO list 列表样式
+.list {
+	display: flex;
+	flex-direction: column;
+
+	.item {}
+
+
+	&.list-x {
+		flex-direction: row;
+
+		&.wrap {
+			flex-wrap: wrap;
+		}
+
+		.item {
+			&+.item {
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+
+// TODO padding,margin
+.margin {
+	margin: 10px;
+}
+.padding {
+	padding: 10px;
+}
+
+$spacings: (
+  mt: margin-top,
+  mr: margin-right,
+  mb: margin-bottom,
+  ml: margin-left,
+  pt: padding-top,
+  pr: padding-right,
+  pb: padding-bottom,
+  pl: padding-left
+);
+
+@each $class, $property in $spacings {
+  .#{$class} {
+    #{$property}: 10px;
+  }
+}
+
+
+.padding-x,
+.pd-x {
+	padding: 0 10px 0 10px;
+}
+
+.padding-y,
+.pd-y {
+	padding: 10px 0 10px 0;
+}
+
+
+// TODO text-align
+.text-align-right {
+	text-align: right;
+}

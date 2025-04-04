@@ -1,0 +1,22 @@
+.m-form-row{
+    display: flex;
+    align-items: center;
+}
+
+.model-form {
+    .m-form-row{
+        width: 90%;
+        max-width: 300px;
+
+       
+    }
+}
+
+.model-form-item{
+    &.type-editor{
+        .m-form-row{
+            width: 100%;
+            max-width: unset;
+        }
+    }
+}
