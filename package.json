@@ -2,9 +2,9 @@
   "name": "looplan-ui",
   "version": "1.0.0",
   "main": "index.js",
-  "description": "这是一个开源的样式库，提供了丰富的UI组件样式。",
+  "description": "这是一个样式库",
   "keywords": ["looplan-ui", "styles", "UI", "open source"],
-  "author": "你的名字 <你的邮箱> (你的个人主页)",
+  "author": "mulo <0@loqh.cn> (个人主页)",
   "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,11 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "你的git仓库地址"
+    "url": "https://github.com/loqhcn/looplan-ui"
   },
-  "homepage": "你的项目主页",
+  "homepage": "项目主页",
   "bugs": {
-    "url": "你的项目issue地址"
+    "url": "https://github.com/loqhcn/looplan-ui/issues"
   },
   "files": [
     "dist",
